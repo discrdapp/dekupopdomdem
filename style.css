@@ -1,0 +1,198 @@
+* {
+	--bg-color: #121213;
+	--border-color: #3a3a3c;
+	--border-color-active: #565758;
+	--box-wrong: #a8acc4;
+	--box-correct: #79b851;
+	--box-almost: #f8c434;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background-color: var(--bg-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+    position: relative;
+}
+
+.boxContainer {
+	display: flex;
+	gap: 5px;
+	margin: 5px 0;
+}
+
+.box {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	width: 62px;
+	height: 62px;
+	border: 2px solid var(--border-color);
+	font-size: 2rem;
+	line-height: 1;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: transparent;
+	border-radius: 5px;
+}
+
+.box.haveletter {
+	border: 2px solid var(--border-color-active);
+}
+
+.box.correct {
+	background-color: var(--box-correct);
+    border: 2px solid transparent;
+}
+
+.box.almost {
+	background-color: var(--box-almost);
+    border: 2px solid transparent;
+}
+
+.box.wrong {
+	background-color: var(--box-wrong);
+    border: 2px solid transparent;
+}
+
+.box.rotate {
+	animation: rotation 0.3s ease infinite;
+}
+
+.box.pop {
+	animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.1);
+	}
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotateX(0) translate3d(0, 0, 0);
+	}
+	50% {
+		transform: rotateX(-90deg) translate3d(0, 0, 0);
+	}
+
+    100% {
+        transform: rotateX(0) translate3d(0, 0, 0);
+    }
+}
+
+.goldscar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('dekupopdemnem.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+}
+
+.goldscar.pop {
+    animation: opacity 3s ease;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+    
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.close img {
+    width: 100%;
+    height: auto;
+}
+
+.brawoWrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000028;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.brawo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: min-content;
+    border-radius: 15px;
+    padding: 15px;
+    transition: opacity 1s ease, top 1s ease;
+    top: -50px;
+    position: relative;
+}
+
+.brawo {
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    background-size: 400% 400%;
+    animation: rainbowAnimation 5s infinite ease-in-out;
+}
+
+  
+@keyframes rainbowAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.gratki {
+    font-family:sans-serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 50px;
+}
+
+.zlotyscarahh {
+    width: 720px;
+    height: auto;
+}
+
+.zlotyscarahh video {
+    width: 100%;
+    height: 100%;
+}
